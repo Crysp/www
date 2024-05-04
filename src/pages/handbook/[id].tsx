@@ -19,8 +19,14 @@ export const getStaticProps: GetStaticProps<ArticleProps> = async ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const notes = await fetchKnowledgeCollection();
-  const paths = notes.map(note => ({ params: { id: note.id } }));
+  const handbook = await fetchKnowledgeCollection();
+  const paths = Object.values(handbook).reduce(
+    (acc, articles) => [
+      ...acc,
+      ...articles.map(article => ({ params: { id: article.id } }))
+    ],
+    [] as { params: { id: string } }[]
+  );
 
   return {
     paths,
