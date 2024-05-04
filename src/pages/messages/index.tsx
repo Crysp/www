@@ -21,14 +21,16 @@ const MessagesIndex: React.FC<Props> = ({ allMessages }) => {
         </Head>
         <NavBar />
         <Container>
-          {allMessages.map(message => (
-            <MessageBlock
-              key={message.id}
-              title={message.meta.title}
-              content={message.content}
-              publishedAt={message.meta.publishedAt}
-            />
-          ))}
+          <div className='flex flex-col items-center gap-20'>
+            {allMessages.map(message => (
+              <MessageBlock
+                key={message.id}
+                title={message.meta.title}
+                content={message.content}
+                publishedAt={message.meta.publishedAt}
+              />
+            ))}
+          </div>
         </Container>
         <Footer />
       </Layout>

@@ -1,11 +1,11 @@
 import { GetStaticProps } from 'next';
 import { fetchKnowledgeCollection } from '~/features/knowledge/infrastructure/storage';
-import { Handbook, HandbookProps } from '~/features/knowledge/ui/Handbook';
+import { HandbookView, HandbookProps } from '~/features/knowledge/ui/Handbook';
 
 export const getStaticProps: GetStaticProps<HandbookProps> = async () => {
-  const articles = await fetchKnowledgeCollection();
+  const handbook = await fetchKnowledgeCollection();
 
-  return { props: { articles } };
+  return { props: { handbook } };
 };
 
-export default Handbook;
+export default HandbookView;

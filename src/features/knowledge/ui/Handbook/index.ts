@@ -1,1 +1,1 @@
-export * from './Handbook';
+export * from './HandbookView';

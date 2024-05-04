@@ -14,6 +14,12 @@ export const toDomain = async (
   if (!dto.meta.title) {
     return left(new KnowledgeMetaMissed('title'));
   }
+  if (!dto.meta.theme) {
+    return left(new KnowledgeMetaMissed('theme'));
+  }
+  if (!dto.meta.order) {
+    return left(new KnowledgeMetaMissed('order'));
+  }
   if (!dto.meta.published_at) {
     return left(new KnowledgeMetaMissed('published_at'));
   }
@@ -22,6 +28,8 @@ export const toDomain = async (
     id: dto.id,
     meta: {
       title: dto.meta.title,
+      theme: dto.meta.theme,
+      order: dto.meta.order,
       publishedAt: dto.meta.published_at.toISOString()
     },
     content: await asSerializedMDX(dto.content)

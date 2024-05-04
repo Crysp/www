@@ -1,5 +1,5 @@
 import { FetchStorageFile } from '~/shared/kernel';
-import { Knowledge } from '~/features/knowledge/core/types';
+import { Handbook, Knowledge } from '~/features/knowledge/core/types';
 
 export type FetchKnowledge = FetchStorageFile<Knowledge>;
-export type FetchKnowledgeCollection = () => Promise<Knowledge[]>;
+export type FetchKnowledgeCollection = () => Promise<Handbook>;

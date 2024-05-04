@@ -1,5 +1,7 @@
 export type KnowledgeMeta = {
   title: string;
+  theme: string;
+  order: number;
   publishedAt: string;
 };
 export type Knowledge = {
@@ -7,3 +9,4 @@ export type Knowledge = {
   meta: KnowledgeMeta;
   content: string;
 };
+export type Handbook = Record<string, Knowledge[]>;
