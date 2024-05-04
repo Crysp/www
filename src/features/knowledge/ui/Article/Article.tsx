@@ -19,11 +19,7 @@ export const Article: React.FC<ArticleProps> = ({ meta, content }) => {
           <Head>
             <title>{meta.title}</title>
             <meta property='og:title' content={meta.title} />
-            <meta
-              property='og:description'
-              content='Summary within 60 characters'
-            />
-            <meta property='og:image' content='#' />
+            <meta property='og:description' content={meta.summary} />
           </Head>
           <div className='max-w-2xl mx-auto'>
             <Heading level={1}>{meta.title}</Heading>

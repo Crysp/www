@@ -2,6 +2,7 @@ export type KnowledgeMeta = {
   title: string;
   theme: string;
   order: number;
+  summary: string;
   publishedAt: string;
 };
 export type Knowledge = {
