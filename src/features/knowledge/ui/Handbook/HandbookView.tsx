@@ -17,7 +17,7 @@ export const HandbookView: React.FC<HandbookProps> = ({ handbook }) => {
   return (
     <Layout>
       <Head>
-        <title>Статьи | Виталик Леонов</title>
+        <title>Справочник | Виталик Леонов</title>
       </Head>
       <NavBar />
       <Container>
