@@ -1,6 +1,7 @@
 export type NoteMeta = {
   title: string;
   summary: string;
+  cover?: string;
   published: boolean;
   publishedAt: string;
 };

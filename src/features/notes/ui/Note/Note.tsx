@@ -20,7 +20,12 @@ export const NoteView: React.FC<NoteProps> = ({ meta, content }) => {
             <title>{meta.title}</title>
             <meta property='og:title' content={meta.title} />
             <meta property='og:description' content={meta.summary} />
-            <meta property='og:image' content='#' />
+            {meta.cover && meta.cover.includes('.mp4') && (
+              <meta property='og:video' content={meta.cover} />
+            )}
+            {meta.cover && !meta.cover.includes('.mp4') && (
+              <meta property='og:image' content={meta.cover} />
+            )}
           </Head>
           <div className='max-w-2xl mx-auto'>
             <Heading level={1}>{meta.title}</Heading>
