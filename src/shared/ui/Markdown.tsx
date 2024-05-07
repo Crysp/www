@@ -21,6 +21,7 @@ import { TableHeader } from './TableHeader';
 import { TableCell } from './TableCell';
 import { TableRow } from './TableRow';
 import { TableHeaderCell } from './TableHeaderCell';
+import { Video } from '~/shared/ui/Video';
 
 type Props = {
   content: string;
@@ -48,12 +49,19 @@ export const Markdown: React.FC<Props> = ({ content }) => {
         hr: Hr,
         pre: CodeBlock,
         code: Code,
-        img: Image,
+        img: props =>
+          props.src?.indexOf('.mp4') ? (
+            // @ts-ignore
+            <Video {...props} />
+          ) : (
+            <Image {...props} />
+          ),
         table: Table,
         thead: TableHeader,
         th: TableHeaderCell,
         td: TableCell,
-        tr: TableRow
+        tr: TableRow,
+        video: Video
       }}
     />
   );

@@ -11,7 +11,7 @@ export const CodeBlock: MDComponent<'pre'> = ({ children }) => {
   return (
     <Card
       as='pre'
-      className='border-none bg-stone-50 -mx-6 my-10 px-4 py-2'
+      className='border-none bg-stone-50 -mx-6 my-10 px-4 py-2 overflow-x-auto'
       shadow='none'
       style={mono.style}
     >

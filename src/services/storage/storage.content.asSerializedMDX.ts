@@ -6,6 +6,7 @@ import typography from '@mavrin/remark-typograf';
 import headingIds from 'rehype-slug';
 import headingAnchors from 'rehype-autolink-headings';
 import syntaxHighlight from 'rehype-highlight';
+import video from 'rehype-video';
 import fsharp from 'highlight.js/lib/languages/fsharp';
 
 export const asSerializedMDX = async (value: string): Promise<string> =>
@@ -40,7 +41,9 @@ export const asSerializedMDX = async (value: string): Promise<string> =>
             // @ts-ignore
             syntaxHighlight,
             { language: fsharp }
-          ]
+          ],
+          // @ts-ignore
+          [video, { details: false }]
         ]
       }
     })

@@ -12,7 +12,7 @@ async function copyFiles(source, target) {
 
     if (stat.isDirectory()) {
       await copyFiles(sourcePath, targetPath);
-    } else if (stat.isFile() && entry.match(/\.(png|webp|svg)$/i)) {
+    } else if (stat.isFile() && entry.match(/\.(png|webp|svg|mp4|mov)$/i)) {
       await fse.copy(sourcePath, targetPath);
     }
   }

@@ -9,8 +9,15 @@ export type NoteDTO = {
 };
 
 export const toDomain = async (dto: NoteDTO): Promise<Either<Error, Note>> => {
+  if (process.env.NODE_ENV === 'production' && !dto.meta.published) {
+    return left(new NoteMetaMissed('published'));
+  }
+
   if (!dto.meta.title) {
     return left(new NoteMetaMissed('title'));
+  }
+  if (!dto.meta.summary) {
+    return left(new NoteMetaMissed('summary'));
   }
   if (!dto.meta.published_at) {
     return left(new NoteMetaMissed('published_at'));
@@ -20,6 +27,8 @@ export const toDomain = async (dto: NoteDTO): Promise<Either<Error, Note>> => {
     id: dto.id,
     meta: {
       title: dto.meta.title,
+      summary: dto.meta.summary,
+      published: true,
       publishedAt: dto.meta.published_at.toISOString()
     },
     content: await asSerializedMDX(dto.content)

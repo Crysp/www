@@ -6,7 +6,7 @@ export const Code: MDComponent<'code'> = ({
   ...other
 }) => (
   <code
-    className={[`bg-stone-50 px-2 py-1 rounded`, className]
+    className={[`bg-stone-50 px-2 py-1 rounded w-fit`, className]
       .filter(Boolean)
       .join(' ')}
     {...other}
