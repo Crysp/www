@@ -28,6 +28,7 @@ export const toDomain = async (dto: NoteDTO): Promise<Either<Error, Note>> => {
     meta: {
       title: dto.meta.title,
       cover: dto.meta.cover,
+      thumbnail: dto.meta.thumbnail,
       summary: dto.meta.summary,
       published: true,
       publishedAt: dto.meta.published_at.toISOString()

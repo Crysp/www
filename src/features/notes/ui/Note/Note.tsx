@@ -21,7 +21,14 @@ export const NoteView: React.FC<NoteProps> = ({ meta, content }) => {
             <meta property='og:title' content={meta.title} />
             <meta property='og:description' content={meta.summary} />
             {meta.cover && meta.cover.includes('.mp4') && (
-              <meta property='og:video' content={meta.cover} />
+              <>
+                <meta property='og:type' content='video.episode' />
+                <meta property='og:image' content={meta.thumbnail} />
+                <meta property='og:video' content={meta.cover} />
+                <meta property='og:video:width' content='1062' />
+                <meta property='og:video:height' content='600' />
+                <meta property='og:video:duration' content='5' />
+              </>
             )}
             {meta.cover && !meta.cover.includes('.mp4') && (
               <meta property='og:image' content={meta.cover} />

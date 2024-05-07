@@ -1,6 +1,7 @@
 ---
 title: Анимация контента
 published: true
+thumbnail: /notes/content_animation/thumbnail.jpg
 cover: /notes/content_animation/cover.mp4
 summary: Улучшаем впечатление от приложения очень простым способом
 published_at: 2024-05-07
